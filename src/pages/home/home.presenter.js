@@ -1,20 +1,29 @@
+import HeaderUI from "../../atoms/Header";
+import FooterUI from "@/atoms/Footer";
+// import { ReactComponent as Banner1 } from "../../assets/Bener1.svg";
+import { TopTitle } from "@/atoms/Title";
+import { MainContainer, MainWrapper } from "@/atoms/MainContainer";
 import * as S from "./home.styles";
 
-export default function HomeUI() {
+export default function HomeUI({ onClickToExam }) {
   return (
-    <S.RectangleParentRoot>
-      <S.Header>
-        <S.HeaderText>오늘도 힘내세요!</S.HeaderText>
-        <S.HeaderButton>view profile</S.HeaderButton>
-      </S.Header>
-      <S.MainContainer>
-        <S.TopTitle>ID님의 시험합격을 도와드릴게요!</S.TopTitle>
+    <MainWrapper>
+      <HeaderUI />
+      <S.BannerContainer>
+        AI기반 채점으로 여러분들의 <S.HighlightedText>합격</S.HighlightedText>을
+        책임져드립니다!
+        <S.Tag># 챗지피티 기반 채점  # 최신 CBT 문제 다수 수록</S.Tag>
+      </S.BannerContainer>
+      <MainContainer>
+        <TopTitle>ID님의 시험합격을 도와드릴게요!</TopTitle>
         <S.TopBoxContainer>
           <S.TopBoxWrapper>
             <S.TopBox>
               <S.TopBoxBtnContainer>
                 <S.TopBoxButton>퀴즈</S.TopBoxButton>
-                <S.TopBoxButton>시험보기</S.TopBoxButton>
+                <S.TopBoxButton onClick={onClickToExam}>
+                  시험보기
+                </S.TopBoxButton>
                 <S.TopBoxButton>오답노트</S.TopBoxButton>
                 <S.TopBoxButton2>단어장</S.TopBoxButton2>
               </S.TopBoxBtnContainer>
@@ -61,7 +70,8 @@ export default function HomeUI() {
             <S.SubName>시험 일정</S.SubName>
           </S.PostContainer>
         </S.Post>
-      </S.MainContainer>
-    </S.RectangleParentRoot>
+      </MainContainer>
+      <FooterUI />
+    </MainWrapper>
   );
 }

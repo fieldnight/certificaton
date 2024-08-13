@@ -1,4 +1,4 @@
-import GlobalStyle from "./home/global";
+import GlobalStyle from "./global";
 import { ThemeProvider } from "styled-components";
 
 export default function App({ Component, pageProps }) {

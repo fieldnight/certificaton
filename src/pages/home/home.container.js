@@ -1,5 +1,10 @@
 import HomeUI from "./home.presenter";
+import { useRouter } from "next/router";
 
 export default function Home() {
-  return <HomeUI />;
+  const router = useRouter();
+  const onClickToExam = () => {
+    router.push("../exam/exam.container");
+  };
+  return <HomeUI onClickToExam={onClickToExam} />;
 }
